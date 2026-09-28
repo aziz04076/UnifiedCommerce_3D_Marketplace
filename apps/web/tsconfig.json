@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@unified-commerce/types": ["../../packages/types/src"],
+      "@unified-commerce/types/*": ["../../packages/types/src/*"],
+      "@unified-commerce/database": ["../../packages/database/src"],
+      "@unified-commerce/database/*": ["../../packages/database/src/*"],
+      "@unified-commerce/ui": ["../../packages/ui/src"],
+      "@unified-commerce/ui/*": ["../../packages/ui/src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@unified-commerce/admin",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo Admin service placeholder for Phase 6",
+    "build": "echo Admin service placeholder",
+    "lint": "echo admin-ok"
+  }
+}

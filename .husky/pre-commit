@@ -1,0 +1,25 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🛡️ Running pre-commit security and quality checks..."
+
+# 1. Check for committed secrets using gitleaks if installed
+if command -v gitleaks >/dev/null 2>&1; then
+  echo "🔍 Scanning for secrets with gitleaks..."
+  gitleaks protect --staged --verbose --config=.gitleaks.toml || {
+    echo "❌ Secret leak detected in staged files! Aborting commit."
+    exit 1
+  }
+else
+  echo "ℹ️ gitleaks not installed on host — skipping local secret scan."
+fi
+
+# 2. Type-check packages and apps
+echo "🔍 Validating TypeScript..."
+npm run build --workspaces=false || {
+  echo "❌ TypeScript validation failed! Aborting commit."
+  exit 1
+}
+
+echo "✅ All pre-commit checks passed!"
+exit 0

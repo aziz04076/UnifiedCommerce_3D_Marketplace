@@ -1,0 +1,32 @@
+title = "UnifiedCommerce - gitleaks config"
+
+[extend]
+# Use the default ruleset
+useDefault = true
+
+[[rules]]
+description = "Razorpay Key"
+id = "razorpay-key"
+regex = '''rzp_(test|live)_[0-9a-zA-Z]{14}'''
+tags = ["razorpay", "payment"]
+
+[[rules]]
+description = "Encryption Key"
+id = "encryption-key"
+regex = '''ENCRYPTION_KEY\s*=\s*[0-9a-fA-F]{64}'''
+tags = ["encryption"]
+
+[allowlist]
+description = "Allowlist for test/example values"
+regexes = [
+  '''example\.com''',
+  '''your_key_here''',
+  '''changeme''',
+  '''placeholder''',
+]
+paths = [
+  '''.env.example''',
+  '''DEPLOYMENT.md''',
+  '''API_INVENTORY.md''',
+  '''store.config.ts''',
+]

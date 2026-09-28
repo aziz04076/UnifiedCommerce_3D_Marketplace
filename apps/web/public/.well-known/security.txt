@@ -1,0 +1,10 @@
+Contact: mailto:security@yourdomain.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, hi
+Canonical: https://yourdomain.com/.well-known/security.txt
+
+# Security Disclosure Policy
+# If you discover a security vulnerability in this store, please report it
+# responsibly by emailing the contact above. Do not exploit the vulnerability.
+# We will acknowledge your report within 72 hours and aim to fix verified
+# issues within 30 days. We do not offer a bug bounty program at this time.

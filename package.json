@@ -1,0 +1,30 @@
+{
+  "name": "unified-commerce",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "seed": "npm run seed --workspace=@unified-commerce/database",
+    "setup": "node scripts/setup-store.js",
+    "check:env": "node scripts/check-env.js",
+    "verify:razorpay": "node scripts/verify-razorpay.js",
+    "rotate-key": "node scripts/rotate-encryption-key.js",
+    "smoke": "node scripts/smoke-test.js",
+    "create-super-admin": "node scripts/create-super-admin.js",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "turbo": "^2.4.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}

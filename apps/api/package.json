@@ -1,0 +1,10 @@
+{
+  "name": "@unified-commerce/api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo API service placeholder for Phase 5",
+    "build": "echo API service placeholder",
+    "lint": "echo api-ok"
+  }
+}
